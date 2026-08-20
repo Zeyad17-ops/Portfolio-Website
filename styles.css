@@ -1,0 +1,260 @@
+/* ---- Reset & Variables ---- */
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+:root {
+  --bg: #0a0e1a;
+  --surface: #131826;
+  --text-primary: #e8ecf3;
+  --text-secondary: #8b93a5;
+  --accent: #2dd4bf;
+  --border: #242c3d;
+  --max-width: 770px;
+}
+
+body {
+  background-color: var(--bg);
+  color: var(--text-primary);
+  font-family: 'Poppins', system-ui, sans-serif;
+  font-weight: 300;
+  line-height: 1.6;
+  font-size: 15px;
+}
+
+/* ---- Layout ---- */
+main {
+  max-width: var(--max-width);
+  margin: 0 auto;
+  padding: 0 2rem;
+}
+
+section {
+  padding: 1.25rem 0 2.75rem;
+}
+
+#name {
+  padding-top: 6rem; /* adjust this number to push it down more or less */
+}
+
+h1, h2, h3 {
+  font-weight: 600;
+  color: var(--text-primary);
+}
+
+h2 {
+  font-size: 1.3rem;
+  margin-bottom: 1.25rem;
+}
+
+p {
+  color: var(--text-secondary);
+  font-size: 0.95rem;
+}
+
+/* ---- Hero ---- */
+.hero-content {
+  display: flex;
+  justify-content: space-between;
+  align-items: flex-start;
+  gap: 2rem;
+}
+
+.hero-text h1 {
+  font-size: 2.7rem;
+  margin-bottom: 1rem;
+}
+
+.hero-text p {
+  font-size: .95rem;
+  max-width: 560px;
+}
+
+.hero-avatar {
+  flex-shrink: 0;
+  position: relative;
+  width: 7rem;
+  height: 7rem;
+  border-radius: 50%;
+  background-color: var(--accent);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-size: 1.5rem;
+  font-weight: 700;
+  color: var(--bg);
+}
+
+.hero-avatar::before {
+  content: "";
+  position: absolute;
+  inset: -1.5rem;
+  border-radius: 50%;
+  background-color: var(--accent);
+  filter: blur(40px);
+  opacity: 0.4;
+  z-index: -1;
+}
+
+/* ---- Entries (Experience & Education) ---- */
+.entry {
+  display: flex;
+  align-items: center;
+  gap: 1rem;
+  padding: 1.25rem 0;
+  border-bottom: 1px solid var(--border);
+}
+
+.entry:last-child {
+  border-bottom: none;
+}
+
+.avatar {
+  flex-shrink: 0;
+  width: 2.5rem;
+  height: 2.5rem;
+  border-radius: 50%;
+  background-color: var(--surface);
+  border: 1px solid var(--border);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-weight: 600;
+  font-size: 0.85rem;
+  color: var(--text-primary);
+}
+
+.entry-details {
+  flex-grow: 1;
+}
+
+.entry-details h3 {
+  font-size: 1rem;
+  margin-bottom: 0.2rem;
+}
+
+.entry-details p {
+  font-size: 0.85rem;
+}
+
+.entry-date {
+  flex-shrink: 0;
+  color: var(--text-secondary);
+  font-size: 0.8rem;
+}
+
+/* ---- Skills ---- */
+.skills-list {
+  list-style: none;
+  display: flex;
+  flex-wrap: wrap;
+  gap: 0.6rem;
+}
+
+.skills-list li {
+  background-color: var(--surface);
+  border: 1px solid var(--border);
+  color: var(--text-secondary);
+  padding: 0.4rem 0.9rem;
+  border-radius: 999px;
+  font-size: 0.8rem;
+}
+
+/* ---- Projects ---- */
+.project-card {
+  background-color: var(--surface);
+  border: 1px solid var(--border);
+  border-radius: 1rem;
+  padding: 1.25rem;
+  margin-bottom: 1.25rem;
+}
+
+.project-card h3 {
+  font-size: 1.05rem;
+  margin-bottom: 0.4rem;
+}
+
+.project-card p {
+  font-size: 0.85rem;
+}
+
+.project-card .tags {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 0.5rem;
+  margin: 0.85rem 0;
+}
+
+.project-card .tags span {
+  background-color: var(--bg);
+  border: 1px solid var(--border);
+  color: var(--text-secondary);
+  padding: 0.25rem 0.7rem;
+  border-radius: 999px;
+  font-size: 0.75rem;
+}
+
+.project-link {
+  color: var(--accent);
+  text-decoration: none;
+  font-weight: 600;
+  font-size: 0.85rem;
+}
+
+.project-link:hover {
+  text-decoration: underline;
+}
+
+/* ---- Contact ---- */
+#contact a {
+  color: var(--accent);
+  text-decoration: none;
+  font-size: 0.95rem;
+}
+
+#contact a:hover {
+  text-decoration: underline;
+}
+
+/* ---- Floating Nav ---- */
+.floating-nav {
+  position: fixed;
+  bottom: 2rem;
+  left: 50%;
+  transform: translateX(-50%);
+  display: flex;
+  gap: 1.4rem;
+  padding: 0.8rem 1.4rem;
+  background-color: rgba(19, 24, 38, 0.7);
+  border: 1px solid var(--border);
+  border-radius: 999px;
+  backdrop-filter: blur(12px);
+  -webkit-backdrop-filter: blur(12px);
+}
+
+.floating-nav a {
+  color: var(--text-secondary);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  transition: color 0.2s ease;
+}
+
+.floating-nav a:hover {
+  color: var(--accent);
+}
+
+.floating-nav svg {
+  width: 1.2rem;
+  height: 1.2rem;
+}
+
+/* ---- Footer ---- */
+footer {
+  text-align: center;
+  padding: 2.5rem 0 8rem;
+  color: var(--text-secondary);
+  font-size: 0.8rem;
+}
