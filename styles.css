@@ -10,7 +10,7 @@
   --surface: #131826;
   --text-primary: #e8ecf3;
   --text-secondary: #8b93a5;
-  --accent: #2dd4bf;
+  --accent: #1bbadc;
   --border: #242c3d;
   --max-width: 770px;
 }
@@ -55,6 +55,15 @@ p {
 }
 
 /* ---- Hero ---- */
+
+.avatar img,
+.hero-avatar img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  border-radius: 50%;
+}
+
 .hero-content {
   display: flex;
   justify-content: space-between;
@@ -160,6 +169,43 @@ p {
   padding: 0.4rem 0.9rem;
   border-radius: 999px;
   font-size: 0.8rem;
+}
+
+.skills-list li {
+  transition: all 0.2s ease;
+}
+
+.skills-list li:hover {
+  transform: scale(1.08);
+  background-color: var(--accent);
+  color: var(--bg);
+  border-color: var(--accent);
+  cursor: default;
+}
+
+/* ---- Skills Groups ---- */
+.skills-group {
+  margin-bottom: 2rem;
+}
+
+.skills-group:last-child {
+  margin-bottom: 0;
+}
+
+.skills-group h3 {
+  font-size: 0.9rem;
+  color: var(--text-secondary);
+  text-transform: uppercase;
+  letter-spacing: 0.05em;
+  margin-bottom: 0.75rem;
+  font-weight: 500;
+}
+
+/* ---- Entry Description ---- */
+.entry-description {
+  margin-top: 0.5rem;
+  font-size: 0.85rem;
+  max-width: 600px;
 }
 
 /* ---- Projects ---- */
