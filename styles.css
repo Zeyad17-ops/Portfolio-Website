@@ -287,6 +287,30 @@ p {
   text-decoration: underline;
 }
 
+#contact {
+  text-align: center;
+}
+#contactfr{
+  font-size: 2em;
+}
+
+.contact-emails {
+  display: flex;
+  justify-content: center;
+  gap: 2rem;
+  flex-wrap: wrap;
+}
+
+.contact-emails a {
+  color: var(--accent);
+  text-decoration: none;
+  font-size: 0.95rem;
+}
+
+.contact-emails a:hover {
+  text-decoration: underline;
+}
+
 /* ---- Floating Nav ---- */
 .floating-nav {
   position: fixed;
@@ -318,6 +342,42 @@ p {
 .floating-nav svg {
   width: 1.2rem;
   height: 1.2rem;
+}
+
+.floating-nav {
+  gap: 1.8rem;
+  padding: 1.1rem 1.8rem;
+}
+
+.floating-nav svg {
+  width: 1.4rem;
+  height: 1.4rem;
+}
+
+.floating-nav a {
+  position: relative;
+}
+
+.nav-tooltip {
+  position: absolute;
+  bottom: 140%;
+  left: 50%;
+  transform: translateX(-50%) translateY(4px);
+  background-color: var(--surface);
+  border: 1px solid var(--border);
+  color: var(--text-primary);
+  font-size: 0.75rem;
+  padding: 0.3rem 0.6rem;
+  border-radius: 6px;
+  white-space: nowrap;
+  opacity: 0;
+  pointer-events: none;
+  transition: opacity 0.2s ease, transform 0.2s ease;
+}
+
+.floating-nav a:hover .nav-tooltip {
+  opacity: 1;
+  transform: translateX(-50%) translateY(0);
 }
 
 /* ---- Footer ---- */
