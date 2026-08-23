@@ -1,5 +1,4 @@
-/* ---- Reset & Variables ---- */
-/* ---- Starfield Background ---- */
+
 #stars-canvas {
   position: fixed;
   top: 0;
@@ -8,6 +7,17 @@
   height: 100%;
   z-index: -1;
   background-color: var(--bg);
+}
+
+.reveal {
+  opacity: 0;
+  transform: translateY(30px);
+  transition: opacity 0.7s ease, transform 0.7s ease;
+}
+
+.reveal.visible {
+  opacity: 1;
+  transform: translateY(0);
 }
 
 * {
@@ -35,7 +45,6 @@ body {
   font-size: 15px;
 }
 
-/* ---- Layout ---- */
 main {
   max-width: var(--max-width);
   margin: 0 auto;
@@ -47,7 +56,7 @@ section {
 }
 
 #name {
-  padding-top: 6rem; /* adjust this number to push it down more or less */
+  padding-top: 6rem;
 }
 
 h1, h2, h3 {
@@ -65,7 +74,6 @@ p {
   font-size: 0.95rem;
 }
 
-/* ---- Hero ---- */
 
 .avatar img,
 .hero-avatar img {
@@ -118,19 +126,6 @@ p {
   z-index: -1;
 }
 
-/* ---- Scroll Reveal ---- */
-.reveal {
-  opacity: 0;
-  transform: translateY(30px);
-  transition: opacity 0.7s ease, transform 0.7s ease;
-}
-
-.reveal.visible {
-  opacity: 1;
-  transform: translateY(0);
-}
-
-/* ---- Entries (Experience & Education) ---- */
 .entry {
   display: flex;
   align-items: center;
@@ -177,7 +172,6 @@ p {
   font-size: 0.8rem;
 }
 
-/* ---- Skills ---- */
 .skills-list {
   list-style: none;
   display: flex;
@@ -206,7 +200,6 @@ p {
   cursor: default;
 }
 
-/* ---- Skills Groups ---- */
 .skills-group {
   margin-bottom: 2rem;
 }
@@ -224,14 +217,12 @@ p {
   font-weight: 500;
 }
 
-/* ---- Entry Description ---- */
 .entry-description {
   margin-top: 0.5rem;
   font-size: 0.85rem;
   max-width: 600px;
 }
 
-/* ---- Projects ---- */
 .project-card {
   background-color: var(--surface);
   border: 1px solid var(--border);
@@ -272,11 +263,16 @@ p {
   font-size: 0.85rem;
 }
 
+.project-link-disabled {
+  color: lightgrey;
+  font-style: italic;
+  font-size: 0.85rem;
+}
+
 .project-link:hover {
   text-decoration: underline;
 }
 
-/* ---- Contact ---- */
 #contact a {
   color: var(--accent);
   text-decoration: none;
@@ -291,7 +287,14 @@ p {
   text-align: center;
 }
 #contactfr{
-  font-size: 2em;
+  font-size: 2.5em;
+}
+#personal-email{
+  color: var(--accent);
+}
+
+#school-email{
+  color: var(--accent);
 }
 
 .contact-emails {
@@ -311,7 +314,6 @@ p {
   text-decoration: underline;
 }
 
-/* ---- Floating Nav ---- */
 .floating-nav {
   position: fixed;
   bottom: 2rem;
@@ -380,7 +382,6 @@ p {
   transform: translateX(-50%) translateY(0);
 }
 
-/* ---- Footer ---- */
 footer {
   text-align: center;
   padding: 2.5rem 0 8rem;
